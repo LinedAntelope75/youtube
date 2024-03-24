@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Video Embedder</title>
+</head>
+<body>
+    <h1>YouTube Vid embeder by KCC</h1>
+    <h6>Lio and Evaan are alive for now</h6>
+    <form id="youtubeForm">
+        <label for="youtubeInput">Enter a YouTube video URL:</label>
+        <input type="url" id="youtubeInput" placeholder="https://www.youtube.com/watch?v=your-video-id">
+        <button type="button" onclick="embedYouTubeVideo()">Embed</button>
+    </form>
+    <div id="embeddedVideo"></div>
+
+    <script>
+        function embedYouTubeVideo() {
+            const youtubeUrl = document.getElementById('youtubeInput').value;
+            const videoId = getYoutubeVideoId(youtubeUrl);
+            if (videoId) {
+                const iframeMarkup = `<iframe width="560" height="315" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allowfullscreen></iframe>`;
+                document.getElementById('embeddedVideo').innerHTML = iframeMarkup;
+            } else {
+                alert('Invalid YouTube URL. Please enter something that actually exists unlike your D̴̨̨̛̛̛̛̛̟̦̻̳̮͍̭̱̙̝͔͇̦̣̦̻̮̻͈̩͓̠̼̣͈̜̘̲̗͕͈̖̲̱̼̤̮̼̰̮̰͉̻͙̞̳͚̼͚̮̯̰̦̜̙͍̙͔̯̠̥̳̥̪̖̖̹̻̪̱̃̈́͌̐̌̈́̐̒͋̃̄̅̏̂͐̌͗͂̌͂̀͊̃̀̀͌̉̏̅̓̒̾͛̅̃̌̈́̐̿̑̿̃͌̒̾̾͋͊̋̓͒͛͑̋̈́̌̒̋͑̀̄̾͆͋̆̿̓̊́̐̾̿͌͂̓͆̄́̔̊͊͋́̈̒͋̐͒̀̈́́̅̂͛̾͋̂͆̈́͑̍͘̕̕̕̕̕̚̚̕͜͠͠͝͠͝͠͝ͅͅA̴̢̡̢̨̨̡̡̡̧̡̡̡̧̨̨̢̨̛̛̛̛̛̛͚̲͔̜͕͚͙̭͇͔̣̪͔̼̟͉̭̟̩̘̺̗͖̯͉̣͕̯̥͖̭͇͚̱̟̟̩̙̼͔̟̹͔̥͉̝̘͎̮̲͓̩̖͈͙̦̩̦͙͙̣̞̟̯̺̗͎̤̻̪͖͚͎͉̹̩̗͙͍̠̘̟̹͕̖̰͈̖̙̺͕̻͓͈͈̰̜̦̯̞̻̞̖̜̮͉͔̳͈̰̟̭͉̱̘͖͚̠̗͍͚͕̠̰̫̩̞̖̖̗̞̺̙̟̣̬̣͓̖͓͚͉̱͉̼͔͎̼͙̙͍̠͚̺͓͓̣̻͉͎̜͕̜̣͉͇̻͇̗̜͇͖̻̯̘̙̩̳̻̫̻̝̠̼̝̮̻̜̠̬̣̪͖͔͉͉̎̍̾̾̾̽̾͊͆̉̈̂̄̍̋͌͂̎̊͒̈́́̂͋̄̊̍̓̄̏͑̈͂̐̅̈́̋̎̌̓̈̓̽͛͆̔̿̅̂̽̀͌̇̈́̀̈́̓̈́̃͌̆́̏̑̉̈́̋̌͌̉͋̿̊̌̀̇͊̀͗̓̄͑͐̌̊́͗͆̅͒̆̓́̌̿̂̉̄̋̃͗̈̀̔̊̀̈́͗̅̉̏͊͑̃̐̓̓̈̉̃̄̅͛̀͋̎̉̈́̽̈́́̽̽͛̒͗́͌̓̍̀̆̀̆̚͘̕͘̚̕̚̕͘̚̚͘̚̚̕̕͜͜͜͝͝͝͝͝͝͠͝͠͝͠͝͝͠͠͝͝͠͠ͅͅͅͅͅͅͅͅͅͅͅͅͅD̸̨̧̧̢̡̢̛̛̛̛̛̛̛̛̛̛͚̜͎͙̟̯̯̮̺͓̖̦͍̣̦̻̜͙̟̦͉̺̫͖̟̪̫̩̞̘̖̗̗̳͖̺̙͔͎͇̥̙̤̜͍̞͕̱͚̖̻͍͕̬̖̤̹͚̳̜̲̬͈̻̣̱̖͕̝̻̜̺͈̦͉̱̼̦̬̞͙͉͍̘̒̎̅͋̃̍͑̂̂̃̓͊͒̆̊̂́͆̀͆͆̀͛͆͐̓̉́̈̊̑͗̅̒́͐̅̐͂̎̈́̄͗̒̎̓͂̈́͆͌̽̀̎͒͛̆͌̃̈́̒́̐̈̅̑͆̀̇̋̓̈́̈́̀̓̏͒̍͑̍̔̇͗̐́͑̓̈́̈̋̂̌͊̑̋̽̀̍̈́́͛͑͋́̒̔͐̏̈̀̔͑͛͑̋͋͌̈́͌͂͗̌̄͗̏͛̈̈̇̈́͂̂̍̀͗̀͗̉̂̆̔̎̊̅́͋̈́̈́͌̎̽̽̓̀̎̎̔́̔̌̔͒̋̄͊̓̑̏̎̄̄́̏̌͂̆̑̌̎̂̉̏̂͆̔͆͆̽͂̍͂̈́͑̉̒̑̎͂̀́̽̇̏͒͂̑̇̂̀͂̈́͗͋͛̾̇̒̅̓̇̅̐̇̔̍̒͗̅͛̌̈́͆̀́̆́̋̾͑͋̽͗̚͘̕̕̚̚̚̕̚̚͘̚̚͘͘̚͘͝͝͠͠͝͠͠͠͝͠͝͝͝͝͝͠ͅͅ');
+            }
+        }
+
+        function getYoutubeVideoId(url) {
+            const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+            const match = url.match(regExp);
+            return (match && match[2].length === 11) ? match[2] : null;
+        }
+    </script>
+</body>
+</html>
